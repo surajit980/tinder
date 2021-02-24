@@ -1,0 +1,28 @@
+def header_menu(self):
+        menu = Menu(self.root)
+        self.root.config(menu=menu)
+        filemenu = Menu(menu)
+        menu.add_cascade(label="Home", menu=filemenu)
+        filemenu.add_command(label="My Profile")
+        filemenu.add_command(label="Edit Profile")
+        filemenu.add_command(label="View Profile")
+        filemenu.add_command(label="LogOut")
+
+        helpmenu = Menu(menu)
+        menu.add_cascade(label="Proposals", menu=helpmenu)
+        helpmenu.add_command(label="My Proposals")
+        helpmenu.add_command(label="My Requests")
+        helpmenu.add_command(label="My Matches")
+
+
+
+# load dp
+        imageUrl = "img/avatar.png"
+
+        load = Image.open(imageUrl)
+        load = load.resize((200, 200), Image.ANTIALIAS)
+        render = ImageTk.PhotoImage(load)
+
+        img = Label(image=render)
+        img.image = render
+        img.pack()
